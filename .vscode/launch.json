@@ -7,10 +7,27 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Ember Server",
+      "name": "Launch Ember CLI",
       "program": "${workspaceFolder}/node_modules/.bin/ember",
-      "args": ["serve"],
-      "skipFiles": ["<node_internals>/**"]
+      "args": [
+        "serve"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "type": "firefox",
+      "request": "attach",
+      "name": "Attach to Firefox",
+      "url": "http://localhost:4200*",
+      "webRoot": "${workspaceFolder}",
+      "pathMappings": [
+        {
+          "url": "http://localhost:4200/assets/super-rentals",
+          "path": "${workspaceFolder}/app"
+        }
+      ]
     }
   ]
 }
